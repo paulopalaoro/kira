@@ -17,30 +17,33 @@ body {
     cursor: move;
     background-color: transparent;
     height: 46px;
-    width: 46px;  /* Adicionado largura inicial */
+    width: 46px;
     transition: all 0.3s ease-in-out;
-    display: flex;  /* Adicionado para alinhamento */
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .workspace-icon.dropped {
-    width: 90%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 300px;
     background-color: rgba(74, 90, 193, 0.1);
     border-radius: 4px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;  /* Alinha o conteúdo à esquerda */
-    padding: 0 10px;  /* Adiciona um pouco de padding */
+    justify-content: flex-start;
+    padding: 0 10px;
 }
-
+/* Remova ou comente este bloco inteiro */
+/* .workspace-icon {
+    resize: horizontal;
+    overflow: auto;
+    min-width: 50px;
+    max-width: 90%;
+} */
 .workspace-icon svg {
     height: 46px;
     width: 46px;
+    flex-shrink: 0;  /* Impede que o SVG encolha */
 }
-
 .workspace-icon.dropped svg {
     width: 100%;  /* Faz o SVG ocupar toda a largura */
     height: 46px;
@@ -50,7 +53,6 @@ body {
     outline: 2px solid #ffc107;
     z-index: 1000;
 }
-
 .workspace-icon:hover {
     background-color: rgba(74, 90, 193, 0.2);
 }
@@ -62,7 +64,6 @@ body {
     top: 0;
     left: 0;
 }
-
 .menu-panel {
     width: 100%;
     height: 25px;
@@ -71,7 +72,6 @@ body {
     top: 25px;
     left: 0;
 }
-
 .icon-panel {
     width: 100%;
     height: 50px;
@@ -85,7 +85,6 @@ body {
     width: 200px;
     height: 100%;
 }
-
 .icon-panel-right {
     flex: 1;
     height: 95%;  /* Changed from 90% to 95% */
@@ -106,7 +105,6 @@ body {
     transition: background-color 0.2s;
     margin-right: 10px;  /* Added spacing between icons */
 }
-
 /* Remove margin from the last icon */
 .icon-wrapper:last-child {
     margin-right: 0;
@@ -151,22 +149,17 @@ body {
     overflow: auto;
     padding: 10px;
 }
-
-/* Optional: For better scrollbar appearance */
 .workspace-panel::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
-
 .workspace-panel::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
-
 .workspace-panel::-webkit-scrollbar-thumb {
     background: #bbdefb;
     border-radius: 5px;
 }
-
 .workspace-panel::-webkit-scrollbar-thumb:hover {
     background: #90caf9;
 }
